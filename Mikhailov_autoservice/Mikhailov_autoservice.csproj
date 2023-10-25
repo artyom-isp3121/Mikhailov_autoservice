@@ -35,9 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,9 +68,57 @@
     <Compile Include="AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentByService.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs" />
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MikhailovModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MikhailovModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MikhailovModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MikhailovModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MikhailovModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSale.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePhoto.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>MikhailovModel.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -102,6 +159,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="MikhailovModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MikhailovModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MikhailovModel.edmx.diagram">
+      <DependentUpon>MikhailovModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,6 +180,39 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\service_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MikhailovModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MikhailovModel.Context.cs</LastGenOutput>
+      <DependentUpon>MikhailovModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="MikhailovModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MikhailovModel.edmx</DependentUpon>
+      <LastGenOutput>MikhailovModel.cs</LastGenOutput>
+    </Content>
+    <Resource Include="qwer\diz.jpg" />
+    <Resource Include="qwer\picture.png" />
+    <Resource Include="qwer\rulevoe-upravlenie-avtomobilya.jpg" />
+    <Resource Include="qwer\transmission.jpg" />
+    <Resource Include="qwer\АКПП.jpg" />
+    <Resource Include="qwer\Вариатор.jpg" />
+    <Resource Include="qwer\Выхлопная система.jpg" />
+    <Resource Include="qwer\ГУР.png" />
+    <Resource Include="qwer\Двигатель.png" />
+    <Resource Include="qwer\Дополнительные услуги.png" />
+    <Resource Include="qwer\Кондиционер.jpg" />
+    <Resource Include="qwer\КПП.png" />
+    <Resource Include="qwer\Подвеска.png" />
+    <Resource Include="qwer\Сцепление.jpg" />
+    <Resource Include="qwer\Техническое обслуживание.png" />
+    <Resource Include="qwer\Топливная система.png" />
+    <Resource Include="qwer\Шиномонтаж.jpg" />
+    <Resource Include="qwer\Электрика.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

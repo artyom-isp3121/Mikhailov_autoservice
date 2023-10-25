@@ -23,6 +23,8 @@ namespace Mikhailov_autoservice
         public ServicePage()
         {
             InitializeComponent();
+            var currentServices = Mikhailov_avtoserviceEntities.GetContext().Service.ToList();
+            ServiceListView.ItemsSource = currentServices;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
