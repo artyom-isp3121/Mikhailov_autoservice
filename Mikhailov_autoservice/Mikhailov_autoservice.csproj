@@ -192,24 +192,24 @@
       <DependentUpon>MikhailovModel.edmx</DependentUpon>
       <LastGenOutput>MikhailovModel.cs</LastGenOutput>
     </Content>
-    <Resource Include="qwer\diz.jpg" />
-    <Resource Include="qwer\picture.png" />
-    <Resource Include="qwer\rulevoe-upravlenie-avtomobilya.jpg" />
-    <Resource Include="qwer\transmission.jpg" />
-    <Resource Include="qwer\АКПП.jpg" />
-    <Resource Include="qwer\Вариатор.jpg" />
-    <Resource Include="qwer\Выхлопная система.jpg" />
-    <Resource Include="qwer\ГУР.png" />
-    <Resource Include="qwer\Двигатель.png" />
-    <Resource Include="qwer\Дополнительные услуги.png" />
-    <Resource Include="qwer\Кондиционер.jpg" />
-    <Resource Include="qwer\КПП.png" />
-    <Resource Include="qwer\Подвеска.png" />
-    <Resource Include="qwer\Сцепление.jpg" />
-    <Resource Include="qwer\Техническое обслуживание.png" />
-    <Resource Include="qwer\Топливная система.png" />
-    <Resource Include="qwer\Шиномонтаж.jpg" />
-    <Resource Include="qwer\Электрика.png" />
+    <Resource Include="Услуги автосервиса\diz.jpg" />
+    <Resource Include="Услуги автосервиса\picture.png" />
+    <Resource Include="Услуги автосервиса\rulevoe-upravlenie-avtomobilya.jpg" />
+    <Resource Include="Услуги автосервиса\transmission.jpg" />
+    <Resource Include="Услуги автосервиса\АКПП.jpg" />
+    <Resource Include="Услуги автосервиса\Вариатор.jpg" />
+    <Resource Include="Услуги автосервиса\Выхлопная система.jpg" />
+    <Resource Include="Услуги автосервиса\ГУР.png" />
+    <Resource Include="Услуги автосервиса\Двигатель.png" />
+    <Resource Include="Услуги автосервиса\Дополнительные услуги.png" />
+    <Resource Include="Услуги автосервиса\Кондиционер.jpg" />
+    <Resource Include="Услуги автосервиса\КПП.png" />
+    <Resource Include="Услуги автосервиса\Подвеска.png" />
+    <Resource Include="Услуги автосервиса\Сцепление.jpg" />
+    <Resource Include="Услуги автосервиса\Техническое обслуживание.png" />
+    <Resource Include="Услуги автосервиса\Топливная система.png" />
+    <Resource Include="Услуги автосервиса\Шиномонтаж.jpg" />
+    <Resource Include="Услуги автосервиса\Электрика.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
