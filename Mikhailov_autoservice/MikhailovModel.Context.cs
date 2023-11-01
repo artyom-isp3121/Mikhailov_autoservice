@@ -15,7 +15,7 @@ namespace Mikhailov_autoservice
     
     public partial class Mikhailov_avtoserviceEntities : DbContext
     {
-        private static Mikhailov_avtoserviceEntities _context;
+        public static Mikhailov_avtoserviceEntities _context;
 
         public static Mikhailov_avtoserviceEntities GetContext()
         {
@@ -23,6 +23,7 @@ namespace Mikhailov_autoservice
             {
                 _context = new Mikhailov_avtoserviceEntities();
             }
+
             return _context;
         }
         public Mikhailov_avtoserviceEntities()
