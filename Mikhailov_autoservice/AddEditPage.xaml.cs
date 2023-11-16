@@ -34,6 +34,7 @@ namespace Mikhailov_autoservice
             DataContext = _currentService;
         }
 
+          
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
