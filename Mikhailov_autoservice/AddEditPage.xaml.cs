@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,6 +42,12 @@ namespace Mikhailov_autoservice
             {
                 errors.AppendLine("Укажите название услуги");
             }
+            var context = Mikhailov_avtoserviceEntities.GetContext();
+
+            if(context.Service.Any(service => service.Title == _currentService.Title && service.ID != _currentService.ID))
+            {
+                errors.AppendLine("Уже существует такая услуга");
+            }
             if (_currentService.Cost == 0 || _currentService.Cost < 0)
             {
                 errors.AppendLine("Укажите стоимость услуги");
@@ -49,9 +56,17 @@ namespace Mikhailov_autoservice
             {
                 errors.AppendLine("Укажите скидку");
             }
-            if (string.IsNullOrWhiteSpace(_currentService.DurationlnSeconds))
+            if (_currentService.DurationlnSeconds == 0)
             {
                 errors.AppendLine("Укажите длительность услуги");
+            }
+            if (_currentService.DurationlnSeconds >240)
+            {
+                errors.AppendLine("Длительность не может быть больше 240 минут");
+            }
+            if ( _currentService.DurationlnSeconds < 0)
+            {
+                errors.AppendLine("Длительность не может быть меньше 0 минут");
             }
 
             if (errors.Length > 0)

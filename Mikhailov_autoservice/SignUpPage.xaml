@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Mikhailov_autoservice"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SignUpPage" FontFamily="Tw Cen MT">
+      Title="SignUpPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -23,19 +23,26 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Наименование услуги" FontSize="15" Grid.Column="0" Grid.Row="0"
                    HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></TextBlock>
+        
         <TextBlock Text="Длительность, мин." FontSize="15" Grid.Column="0" Grid.Row="1"
            HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></TextBlock>
+        
         <TextBlock Text="ФИО клиента" FontSize="15" Grid.Column="0" Grid.Row="2"
            HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></TextBlock>
+        
         <TextBlock Text="Дата" FontSize="15" Grid.Column="0" Grid.Row="3"
            HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></TextBlock>
+        
         <TextBlock Text="Время начала:" FontSize="15" Grid.Column="0" Grid.Row="4"
            HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="0" Height="30" 
-                 Text="{Binding Title}" FontSize="20"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="1" Height="30"  Width="200" FontSize="20"
-                 Text="{Binding DurationlnSeconds}" HorizontalAlignment="Left"></TextBox>
-        <ComboBox Grid.Column="1" Grid.Row="2" Height="30" Width="300" FontSize="15"
+        
+        <TextBox Name="TBTitle" Grid.Column="1" Grid.Row="0" Height="30" 
+                 Text="{Binding Title}" IsEnabled="False" FontSize="20"></TextBox>
+
+        <TextBox Name="TBDurationlnSeconds" Grid.Column="1" Grid.Row="1" Height="30"  Width="200" FontSize="20"
+                 Text="{Binding DurationlnSeconds}" IsEnabled="False" HorizontalAlignment="Left"></TextBox>
+
+        <ComboBox Grid.Column="1" Grid.Row="2" Height="40" Width="300" FontSize="15"
                   Name="ComboClient" HorizontalAlignment="Left">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -48,11 +55,13 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
             
+        
             
-        <DatePicker Grid.Column="1" Grid.Row="3" Height="30" Width="200" FontSize="20"
+        <DatePicker Grid.Column="1" Grid.Row="3" Height="40" Width="200" FontSize="20"
                     Name="StartDate" HorizontalAlignment="Left"></DatePicker>
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
-            <TextBox Name="TBStart" Height="30" Width="200" FontSize="20" ></TextBox>
+            <TextBox Name="TBStart" Height="30" Width="200" FontSize="20" 
+                     TextChanged="TBStart_TextChanged"></TextBox>
             <TextBlock Text="Время окончания:" FontSize="15" Height="30" Margin="20"></TextBlock>
             <TextBox Name="TBEnd" Height="30" Width="200" FontSize="20" ></TextBox>
         </StackPanel>

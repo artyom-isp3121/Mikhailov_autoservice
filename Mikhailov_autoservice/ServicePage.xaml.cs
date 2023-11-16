@@ -25,7 +25,7 @@ namespace Mikhailov_autoservice
     {
         private int CountRecords;
         private int CountPage;
-        private int CurrentPage = 0;
+        private int CurrentPage;
         private List<Service> CurrentPageList = new List<Service>();
         private List<Service> TableList;
 
@@ -126,7 +126,9 @@ namespace Mikhailov_autoservice
             {
                 Mikhailov_avtoserviceEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 ServiceListView.ItemsSource = Mikhailov_avtoserviceEntities.GetContext().Service.ToList();
+                
             }
+            UpdateServices();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -209,7 +211,10 @@ namespace Mikhailov_autoservice
                         else
                         {
                             Ifupdate = false;
+                            UpdateServices();
+
                         }
+                     
                         break;
                     case 2:
                         if(CurrentPage < CountPage - 1)
@@ -225,8 +230,11 @@ namespace Mikhailov_autoservice
                         {
                             Ifupdate=false;
                         }
+                        
                         break;
+                        
                 }
+                
             }
             if (Ifupdate)
             {
